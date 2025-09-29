@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Copiar Texto Oculto</title>
+  <style>
+    .copy-btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .copy-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão com atributo data-code -->
+  <button class="copy-btn" onclick="copyCode(this)" data-code="console.log('Olá mundo!');">
+    Copiar código
+  </button>
+
+  <script>
+    function copyCode(button) {
+      const code = button.getAttribute("data-code");
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "Copiado!";
+        setTimeout(() => button.innerText = "Copiar código", 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

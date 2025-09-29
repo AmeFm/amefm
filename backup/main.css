@@ -1,0 +1,69 @@
+body{
+    color:black;
+    font-family:Arial, Sans;
+    max-width:900px;
+    margin:0 auto;
+    padding:10px;
+    background-color:#f7dff3
+}
+h1, h2, h3, img {
+    text-align: center;
+    display: block;
+}
+iframe, img {
+    display: block;
+    margin: 0 auto;
+}
+.i4ewOd-pzNkMb-haAclf {
+    display: none !important;
+}
+
+    .code-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px; /* espaço entre caixa e botão */
+      margin: 5px 0;
+    }
+
+    .code-container {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 5px 8px;
+      background: #f5f5f5;
+      font-family: monospace;
+      max-height: 120px;  /* se for longo, ativa scroll */
+      overflow: auto;
+      white-space: pre;   /* preserva formatação */
+    }
+
+    .copy-btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+      flex-shrink: 0; /* botão não encolhe */
+    }
+
+    .copy-btn:hover {
+      background: #0056b3;
+    }
+
+        .copy-btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .copy-btn:hover {
+      background: #0056b3;
+    }
+    h2 {
+     margin-top: 70px;
+    }

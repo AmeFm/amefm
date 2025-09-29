@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>AmFm</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/favico.jpg'/>
+  </head>
+  <body>
+
+<div class="margem">
+<img style="max-width: 600px; max-width: 90%;" src="/assets/img/firulinha-topo.png" alt="">
+
+<img style="width: 300px; max-width: 80%; margin-top: 30px;" src="nomes.png" alt="">
+
+<img style="max-width: 150px; margin-top: 30px;" src="data.png" alt="">
+
+
+<img class="svg" src="/assets/img/church.svg" alt="">
+<h2 class="linha">Cerimônia</h2>
+<p style="text-align: center;">
+    Às 15h30 <br>
+  Igreja do Carmo <br>
+  Praça do Carmo, Olinda <br>
+      <a href="">Mapa</a>
+</p>
+
+<img class="svg" style="width: 90px;" src="/assets/img/toast.svg" alt="">
+<h2 class="linha">Recepção</h2>
+<p style="text-align: center;">Sobrado Mourisco <br>
+  Rua 27 de Janeiro nº 1, Olinda <br>
+  <a href="">Mapa</a>
+</p>
+
+<img class="svg" style="width: 70px;" src="/assets/img/check.svg" alt="">
+<h2 class="linha">Confirme sua presença</h2>
+<p>Nos ajude confirmando a sua presença no link abaixo:
+  <br>
+  <a href="">Confirme aqui!</a>
+</p>
+
+<img class="svg" style="width: 70px;" src="/assets/img/gift.svg" alt="">
+<h2 class="linha">Lista de presentes</h2>
+<p>Sua presença é nosso maior presente, mas, se quiser nos presentar, estas são algumas opções: <br>
+  <a href="">Lista de presentes</a>
+
+<!-- Botão com atributo data-code -->
+<button class="copy-btn" onclick="copyCode(this)" data-code="20d6d241-b4df-4cfc-b311-22c900e1d743">
+    Copiar chave pix
+</button>
+</p>
+  <script>
+    function copyCode(button) {
+      const code = button.getAttribute("data-code");
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "Copiado!";
+        setTimeout(() => button.innerText = "Copiar código", 2000);
+      });
+    }
+  </script>
+</p>
+
+
+<img class="svg" style="width: 70px;" src="/assets/img/hotel.svg" alt="">
+<h2 class="linha">Dicas de hospedagem</h2>
+
+<p>Recomendamos algumas pousadas próximas ao evento. Você pode conferir a lista clicando no botão abaixo. <br>
+<a href="/hoteis.html">Hospedagem</a>
+</p>
+
+</div>
+
+<div class="contagem">
+<h2>Faltam...</h2>
+<div id="countdown"></div>
+
+<script>
+  // Data alvo: 6 de dezembro de 2025 às 15:30
+  const targetDate = new Date("December 6, 2025 15:30:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      document.getElementById("countdown").innerHTML = "Chegou o grande momento!";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const h = String(hours).padStart(2, "0");
+    const m = String(minutes).padStart(2, "0");
+    const s = String(seconds).padStart(2, "0");
+
+    document.getElementById("countdown").innerHTML =
+      `${days} dias e ${h}:${m}:${s}`;
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
+</div>
+
+</body>
+</html>
