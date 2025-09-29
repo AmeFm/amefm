@@ -4,10 +4,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>AmFm</title>
+    <style>
+  body {
+  opacity: 0;                 /* começa invisível */
+  transition: opacity 3s ease; /* duração do fade in */
+}
+
+body.loaded {
+  opacity: 1;                 /* visível quando carregou */
+}
+</style>
     <link rel="stylesheet" href="style.css">
     <link rel='shortcut icon' type='image/x-icon' href='/favico.jpg'/>
   </head>
   <body>
+
+
+
+  <script>
+  // Quando a página carregar, adiciona a classe loaded para fade in
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+
+  // Intercepta cliques em links internos para aplicar fade out
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+
+      // só links que vão para outra página
+      if(href && href !== '#') {
+        e.preventDefault();
+        document.body.classList.remove('loaded'); // fade out
+        setTimeout(() => {
+          window.location = href; // depois de 500ms, navega
+        }, 500);
+      }
+    });
+  });
+</script>
 
 <div class="margem">
 <img style="max-width: 600px; max-width: 90%;" src="/assets/img/firulinha-topo.png" alt="">

@@ -7,8 +7,8 @@
 body {
     color:black;
     font-family:Arial, Sans;
-    max-width:900px;
-    margin:0 auto;
+    max-width: 900px;
+    margin: 0 auto;
     /* background-color:#f7dff3; */
     background-image: url(bg1.jpg);
 }
@@ -96,11 +96,11 @@ a, button {
     padding: 6px;
     margin: 6px auto;
     color: rgb(156, 10, 131);
-    background-color: rgb(255, 178, 250);
+    background-color: rgb(255, 194, 232);
     border: none;
 }
 a:hover, button:hover {
-    background-color: rgb(232, 137, 232);
+    background-color: rgb(241, 133, 214);
     cursor: pointer;
 }
 
@@ -118,7 +118,7 @@ p {
     text-align: center;
 }
 .contagem {
-    background-color: rgb(247, 154, 242);
+    background-color: rgb(252, 165, 219);
     padding: 20px;
     font-weight: bold;
     color: white;
